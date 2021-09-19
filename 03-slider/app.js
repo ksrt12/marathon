@@ -13,7 +13,7 @@ upBtn.addEventListener("click", () => changeSlide(true));
 downBtn.addEventListener("click", () => changeSlide(false));
 
 function changeSlide(up) {
-    if (up) {
+    if (!up) {
         activeSlideIndex += 1;
         if (activeSlideIndex === slidesCount) {
             activeSlideIndex = 0;
