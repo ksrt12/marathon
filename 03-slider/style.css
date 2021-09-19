@@ -80,7 +80,7 @@ button:focus {
 .container .controls button {
   position: absolute;
   left: 35%;
-  top: 50%;
+  top: 60%;
   z-index: 100;
 }
 
