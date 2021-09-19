@@ -10,6 +10,13 @@ let activeSlideIndex = 0;
 sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
 
 document.body.addEventListener('wheel', checkScrollDirection);
+document.addEventListener("keydown", event => {
+    if (event.key === "ArrowUp") {
+        changeSlide(true);
+    } else if (event.key === "ArrowDown") {
+        changeSlide(false);
+    }
+});
 upBtn.addEventListener("click", () => changeSlide(true));
 downBtn.addEventListener("click", () => changeSlide(false));
 
