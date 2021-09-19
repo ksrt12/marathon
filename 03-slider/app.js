@@ -9,6 +9,7 @@ let activeSlideIndex = 0;
 
 sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
 
+document.body.addEventListener('wheel', checkScrollDirection);
 upBtn.addEventListener("click", () => changeSlide(true));
 downBtn.addEventListener("click", () => changeSlide(false));
 
@@ -29,4 +30,19 @@ function changeSlide(up) {
 
     mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
     sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
+}
+
+function checkScrollDirection(event) {
+    if (checkScrollDirectionIsUp(event)) {
+        changeSlide(true);
+    } else {
+        changeSlide(false);
+    }
+}
+
+function checkScrollDirectionIsUp(event) {
+    if (event.wheelDelta) {
+        return event.wheelDelta > 0;
+    }
+    return event.deltaY < 0;
 }
