@@ -20,6 +20,7 @@ function removeColor(elem) {
     elem.style.backgroundColor = "#1d1d1d";
     elem.style.boxShadow = `0 0 2px #000`;
 }
+
 function getRandomColor() {
     return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
